@@ -20,14 +20,14 @@ public class MouseAdaptForGame extends MouseAdapter implements Serializable {
     private static final long serialVersionUID = 13579L;
 
     /**
-     * window, GUI.GameWindow type, it is used to store the GUI.GameWindow.
+     * window, gui.GameWindow type, it is used to store the gui.GameWindow.
      */
     private final GameWindow window;
 
     /**
      * We use super(), to use the constructor of the ancestor class.
-     * And we set the window member variable to the param GUI.GameWindow.
-     * @param wind GUI.GameWindow
+     * And we set the window member variable to the param gui.GameWindow.
+     * @param wind gui.GameWindow
      */
     public MouseAdaptForGame(GameWindow wind) {
         super();
@@ -58,12 +58,13 @@ public class MouseAdaptForGame extends MouseAdapter implements Serializable {
     /**
      * The function to help the Cognitive Complexity of mouseClicked function.
      * It sets the flag and updates the counter.
-     * @param cell Entity.Cell, on which it was clicked
+     * @param cell entity.Cell, on which it was clicked
      */
     private void setFlagOnCell(Cell cell) {
         if (cell.getIsFlagged()) {
             cell.setFlag();
             cell.setIcon(null);
+            cell.setDisabledIcon(null);
             window.incFlagCount();
             window.getFlagButton().setText(String.valueOf(window.getFlagCount()));
         } else {
@@ -71,6 +72,7 @@ public class MouseAdaptForGame extends MouseAdapter implements Serializable {
                 cell.setFlag();
                 Icon flagIcon = new ImageIcon("flag.png");
                 cell.setIcon(flagIcon);
+                cell.setDisabledIcon(flagIcon);
                 window.decrFlagCount();
                 window.getFlagButton().setText(String.valueOf(window.getFlagCount()));
             }
@@ -81,7 +83,7 @@ public class MouseAdaptForGame extends MouseAdapter implements Serializable {
      * Same function as setFlagOnCell.
      * It locates the source from the grid.
      * @param e MouseEvent
-     * @return (Entity.Cell) e.getSource() / null
+     * @return (entity.Cell) e.getSource() / null
      */
     private Cell setCellToSource(MouseEvent e) {
         for(int i = 0; i < window.getSizeX(); i++) {

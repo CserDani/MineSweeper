@@ -241,9 +241,9 @@ public class GameWindow extends JFrame implements ActionListener, Serializable {
     public boolean getLost() {return lost; }
 
     /**
-     * The main initialization of the GUI.GameWindow.
+     * The main initialization of the gui.GameWindow.
      * It either initializes a new window with the difficulty, or loads a saved game.
-     * @param difficulty - the diff variable gets the difficulty from the GUI.GameStartMenu
+     * @param difficulty - the diff variable gets the difficulty from the gui.GameStartMenu
      */
     public GameWindow(String difficulty) {
         if(difficulty.equals("Load")) {
@@ -442,8 +442,13 @@ public class GameWindow extends JFrame implements ActionListener, Serializable {
     public void revealAll() {
         for(int i = 0; i < sizex; i++) {
             for(int j = 0; j < sizey; j++) {
-                if(!cells[i][j].getIsRevealed() && !cells[i][j].getIsFlagged()) {
-                    cells[i][j].revealCell(this);
+                if(!cells[i][j].getIsRevealed()) {
+                    if(!cells[i][j].getIsFlagged()) {
+                        cells[i][j].revealCell(this);
+                    } else {
+                        cells[i][j].setRevealed();
+                        cells[i][j].setEnabled(false);
+                    }
                 }
             }
         }
@@ -454,7 +459,7 @@ public class GameWindow extends JFrame implements ActionListener, Serializable {
      * The returned array is used to set the neighbouringCells variable in Cells class.
      * @param x the x coordinate of a cell
      * @param y the y coordinate of a cell
-     * @return Entity.Cell[] cellsAround - an array of cells around one cell.
+     * @return entity.Cell[] cellsAround - an array of cells around one cell.
      */
     public Cell[] cellsAroundOne(int x, int y) {
         Cell[] cellsAround = new Cell[8];
@@ -480,9 +485,9 @@ public class GameWindow extends JFrame implements ActionListener, Serializable {
     }
 
     /**
-     * This function is used to write the GUI.GameWindow out into a txt (SavedGame.txt).
+     * This function is used to write the gui.GameWindow out into a txt (SavedGame.txt).
      * Always one saved game, if the txt contains one already, it overwrites it.
-     * @param wind the GUI.GameWindow which we save
+     * @param wind the gui.GameWindow which we save
      */
     public void saveGame(GameWindow wind) {
         try (ObjectOutputStream oos = new ObjectOutputStream(Files.newOutputStream(Paths.get("SavedGame.txt")))){
@@ -495,6 +500,7 @@ public class GameWindow extends JFrame implements ActionListener, Serializable {
 
     /**
      * This function is used to load a game.
+     * A saved game can only be loaded once, hence the "this.saveGame(null)"
      */
     public void loadGame() {
         try (ObjectInputStream ois = new ObjectInputStream(Files.newInputStream(Paths.get("SavedGame.txt")))) {

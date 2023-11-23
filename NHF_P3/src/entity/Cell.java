@@ -56,7 +56,7 @@ public class Cell extends JButton implements Serializable {
     private boolean isFlagged = false;
 
     /**
-     * The constructor of Entity.Cell.
+     * The constructor of entity.Cell.
      * It sets the size, margin and the used Font.
      */
     public Cell() {
@@ -93,7 +93,7 @@ public class Cell extends JButton implements Serializable {
     /**
      * setter for neighbouringCells.
      * And calls setMinesAround setter.
-     * @param cells an array of Entity.Cell
+     * @param cells an array of entity.Cell
      */
     public void setNeighbouringCells(Cell[] cells) {
         neighbouringCells = cells;
@@ -146,7 +146,7 @@ public class Cell extends JButton implements Serializable {
      * It recursively reveals the neighbouring cells after a click if it was empty (There was no mine around the cell).
      * It only reveals those neighbours which are not (a) mine/revealed/hole/plus health/flagged.
      * If the player hasn't lost, then it sets the background color as well.
-     * @param wind GUI.GameWindow
+     * @param wind gui.GameWindow
      */
     public void recursCogComplex(GameWindow wind) {
         for(Cell cell : neighbouringCells) {
@@ -188,8 +188,8 @@ public class Cell extends JButton implements Serializable {
     }
 
     /**
-     * It reveals the cell in which it was clicked (or was recursively revealed or the GUI.GameWindow called reveal all).
-     * @param wind GUI.GameWindow - Mainly used to increment revealedCells.
+     * It reveals the cell in which it was clicked (or was recursively revealed or the gui.GameWindow called reveal all).
+     * @param wind gui.GameWindow - Mainly used to increment revealedCells.
      */
     public void revealCell(GameWindow wind) {
         this.setEnabled(false);
@@ -224,7 +224,7 @@ public class Cell extends JButton implements Serializable {
     /**
      * The manager of a cell on which it was clicked. It sets the game lost if there are no healths left
      * and checks for a win at the end.
-     * @param wind GUI.GameWindow
+     * @param wind gui.GameWindow
      */
     public void manageCell(GameWindow wind) {
         this.setBackground(Color.GRAY);

@@ -17,14 +17,14 @@ public class LoseWindow extends JFrame implements ActionListener {
     private final JButton ok = new JButton("OK");
 
     /**
-     * gameWind, GUI.GameWindow, to store the GUI.GameWindow as it will close when the GUI.LoseWindow is closed.
+     * gameWind, gui.GameWindow, to store the gui.GameWindow as it will close when the gui.LoseWindow is closed.
      */
     private final GameWindow gameWind;
 
     /**
-     * The initializer of the GUI.LoseWindow.
+     * The initializer of the gui.LoseWindow.
      * It creates the window and sets gameWind to gameW.
-     * @param gameW GUI.GameWindow
+     * @param gameW gui.GameWindow
      */
     public LoseWindow(GameWindow gameW) {
         gameWind = gameW;
@@ -55,8 +55,8 @@ public class LoseWindow extends JFrame implements ActionListener {
 
     /**
      * The required implementation of actionPerformed defined in ActionListener.
-     * If it was clicked on ok button, then it closes both this and the GUI.GameWindow.
-     * Then open the GUI.MainMenu.
+     * If it was clicked on ok button, then it closes both this and the gui.GameWindow.
+     * Then open the gui.MainMenu.
      * @param e ActionEvent
      */
     @Override

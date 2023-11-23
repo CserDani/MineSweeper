@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * gui.WinWindow class.
+ * TopList.txtWindow class.
  * It extends from JFrame and implements ActionListener.
  * The window pops up when the player won.
  */
@@ -29,14 +29,14 @@ public class WinWindow extends JFrame implements ActionListener {
     private final JTextField nameField = new JTextField(20);
 
     /**
-     * gameWind, GUI.GameWindow, to store the GUI.GameWindow.
+     * gameWind, gui.GameWindow, to store the gui.GameWindow.
      */
     private final GameWindow gameWind;
 
     /**
-     * The initializer of GUI.WinWindow.
-     * It creates the GUI.WinWindow and sets gameWind to gameW.
-     * @param gameW GUI.GameWindow
+     * The initializer of gui.WinWindow.
+     * It creates the gui.WinWindow and sets gameWind to gameW.
+     * @param gameW gui.GameWindow
      */
     public WinWindow(GameWindow gameW) {
         gameWind = gameW;
@@ -97,7 +97,7 @@ public class WinWindow extends JFrame implements ActionListener {
 
         Scanner scan = null;
         try {
-            File topLi = new File("GUI.TopList.txt");
+            File topLi = new File("TopList.txt");
             scan = new Scanner(topLi);
 
             while (scan.hasNextLine()) {
@@ -112,7 +112,7 @@ public class WinWindow extends JFrame implements ActionListener {
             scan.close();
         } catch (FileNotFoundException e) {
             Logger logger = Logger.getLogger(WinWindow.class.getName());
-            logger.log(Level.WARNING, "GUI.TopList.txt was not found!", e);
+            logger.log(Level.WARNING, "TopList.txt was not found!", e);
         }
 
         if(scan != null) {
@@ -137,21 +137,21 @@ public class WinWindow extends JFrame implements ActionListener {
         }
 
 
-        try (FileWriter fw = new FileWriter("GUI.TopList.txt")){
+        try (FileWriter fw = new FileWriter("TopList.txt")){
             for (TopListEntry entry : topList) {
                 fw.write(entry.name + ";" + entry.time + ";" + entry.diff + "\n");
             }
         } catch (IOException e) {
             Logger logger = Logger.getLogger(WinWindow.class.getName());
-            logger.log(Level.WARNING, "IOException when tried to write in GUI.TopList.txt", e);
+            logger.log(Level.WARNING, "IOException when tried to write in TopList.txt", e);
         }
     }
 
     /**
      * The required implementation of actionPerformed defined in ActionListener.
-     * If it was clicked on ok button, then it closes both this and the GUI.GameWindow, and
+     * If it was clicked on ok button, then it closes both this and the gui.GameWindow, and
      * it tries the players data on the top list if it gave a name. If no name was given, it just closes.
-     * Then opens the GUI.MainMenu.
+     * Then opens the gui.MainMenu.
      * @param e ActionEvent
      */
     @Override

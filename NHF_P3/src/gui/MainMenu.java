@@ -8,25 +8,25 @@ import java.awt.event.ActionListener;
 /**
  * gui.MainMenu class.
  * It extends from JFrame and implements ActionListener.
- * It is the Main.Main menu that pops up when the program is started.
+ * It is the main.Main menu that pops up when the program is started.
  */
 public class MainMenu extends JFrame implements ActionListener {
     /**
-     * gameButton, JButton, when it was clicked on it opens the GUI.GameStartMenu.
+     * gameButton, JButton, when it was clicked on it opens the gui.GameStartMenu.
      */
     private final JButton gameButton = new JButton("START");
 
     /**
-     * toplistButton, JButton, when it was clicked on it opens the GUI.TopList.
+     * toplistButton, JButton, when it was clicked on it opens the gui.TopList.
      */
     private final JButton toplistButton = new JButton("TOPLIST");
 
     /**
-     * The initializer of GUI.MainMenu.
-     * It creates the GUI.MainMenu window.
+     * The initializer of gui.MainMenu.
+     * It creates the gui.MainMenu window.
      */
     public MainMenu() {
-        this.setTitle("GUI.MainMenu");
+        this.setTitle("gui.MainMenu");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(600, 400);
         this.setResizable(false);
@@ -34,7 +34,7 @@ public class MainMenu extends JFrame implements ActionListener {
 
         JPanel northp = new JPanel();
 
-        JLabel menutext = new JLabel("MineSweeper Main.Main Menu", SwingConstants.CENTER);
+        JLabel menutext = new JLabel("MineSweeper main.Main Menu", SwingConstants.CENTER);
         menutext.setFont(new Font("Times New Roman", Font.BOLD, 40));
         northp.add(menutext);
 
@@ -70,7 +70,7 @@ public class MainMenu extends JFrame implements ActionListener {
 
     /**
      * The required implementation of actionPerformed defined in ActionListener.
-     * If the player hit the gameButton, it closes and opens the GUI.GameStartMenu.
+     * If the player hit the gameButton, it closes and opens the gui.GameStartMenu.
      * If the player hit the toplistButton, it closes and opens the top list.
      * @param e ActionEvent
      */

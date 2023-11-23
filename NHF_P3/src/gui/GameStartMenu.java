@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 /**
  * gui.GameStartMenu class.
  * It extends from JFrame and implements ActionListener.
- * It is the menu that pops up when the player hits start in GUI.MainMenu.
+ * It is the menu that pops up when the player hits start in gui.MainMenu.
  */
 public class GameStartMenu extends JFrame implements ActionListener {
     /**
@@ -20,7 +20,7 @@ public class GameStartMenu extends JFrame implements ActionListener {
     private final JButton start = new JButton("START");
 
     /**
-     * back, JButton, the button to go back to the GUI.MainMenu.
+     * back, JButton, the button to go back to the gui.MainMenu.
      */
     private final JButton back = new JButton("BACK");
 
@@ -35,11 +35,11 @@ public class GameStartMenu extends JFrame implements ActionListener {
     private final JComboBox<String> diffs = new JComboBox<>(difficulties);
 
     /**
-     * The initializer of the GUI.GameStartMenu.
-     * It creates the GUI.GameStartMenu window.
+     * The initializer of the gui.GameStartMenu.
+     * It creates the gui.GameStartMenu window.
      */
     public GameStartMenu() {
-        this.setTitle("GUI.GameStartMenu");
+        this.setTitle("gui.GameStartMenu");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(600,400);
         this.setResizable(false);
@@ -111,8 +111,8 @@ public class GameStartMenu extends JFrame implements ActionListener {
 
     /**
      * The required implementation of actionPerformed defined in ActionListener.
-     * If the player hit the start button, a GUI.GameWindow starts with the selected difficulty.
-     * If the player hit the back button, it closes and opens the GUI.MainMenu.
+     * If the player hit the start button, a gui.GameWindow starts with the selected difficulty.
+     * If the player hit the back button, it closes and opens the gui.MainMenu.
      * @param e ActionEvent
      */
     @Override

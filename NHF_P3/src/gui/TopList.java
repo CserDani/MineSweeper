@@ -17,15 +17,15 @@ import java.util.logging.Logger;
 public class TopList extends JFrame implements ActionListener {
     /**
      * back, JButton, the only button of the frame.
-     * Used to go back to the GUI.MainMenu.
+     * Used to go back to the gui.MainMenu.
      */
     private final JButton back = new JButton("BACK");
 
     /**
-     * The initialization of the GUI.TopList frame.
+     * The initialization of the gui.TopList frame.
      */
     public TopList() {
-        this.setTitle("GUI.TopList");
+        this.setTitle("TopList");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(600, 400);
         this.setResizable(false);
@@ -51,10 +51,10 @@ public class TopList extends JFrame implements ActionListener {
         centerBox2.add(Box.createRigidArea(new Dimension(0,15)));
         centerBox3.add(Box.createRigidArea(new Dimension(0,15)));
 
-        // Scanner used, to read all the lines of GUI.TopList.txt
+        // Scanner used, to read all the lines of opList.txt
         Scanner scan = null;
         try {
-            File topl = new File("GUI.TopList.txt");
+            File topl = new File("TopList.txt");
             scan = new Scanner(topl);
 
             while(scan.hasNextLine()) {
@@ -76,7 +76,7 @@ public class TopList extends JFrame implements ActionListener {
             }
         } catch (FileNotFoundException e) {
             Logger logger = Logger.getLogger(TopList.class.getName());
-            logger.log(Level.WARNING, "GUI.TopList.txt was not found!", e);
+            logger.log(Level.WARNING, "TopList.txt was not found!", e);
         }
 
         if(scan != null) {
@@ -104,7 +104,7 @@ public class TopList extends JFrame implements ActionListener {
 
     /**
      * The required implementation of actionPerformed defined in ActionListener.
-     * If it was clicked on back, it closes this window and opens the GUI.MainMenu.
+     * If it was clicked on back, it closes this window and opens the gui.MainMenu.
      * @param e ActionEvent
      */
     @Override
