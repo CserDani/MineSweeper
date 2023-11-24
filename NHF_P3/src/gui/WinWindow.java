@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * TopList.txtWindow class.
+ * WinWindow class.
  * It extends from JFrame and implements ActionListener.
  * The window pops up when the player won.
  */
