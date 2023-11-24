@@ -39,7 +39,7 @@ public class GameStartMenu extends JFrame implements ActionListener {
      * It creates the gui.GameStartMenu window.
      */
     public GameStartMenu() {
-        this.setTitle("gui.GameStartMenu");
+        this.setTitle("GameStartMenu");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(600,400);
         this.setResizable(false);

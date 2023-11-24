@@ -26,7 +26,7 @@ public class MainMenu extends JFrame implements ActionListener {
      * It creates the gui.MainMenu window.
      */
     public MainMenu() {
-        this.setTitle("gui.MainMenu");
+        this.setTitle("MainMenu");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(600, 400);
         this.setResizable(false);
@@ -34,7 +34,7 @@ public class MainMenu extends JFrame implements ActionListener {
 
         JPanel northp = new JPanel();
 
-        JLabel menutext = new JLabel("MineSweeper main.Main Menu", SwingConstants.CENTER);
+        JLabel menutext = new JLabel("MineSweeper Main Menu", SwingConstants.CENTER);
         menutext.setFont(new Font("Times New Roman", Font.BOLD, 40));
         northp.add(menutext);
 
