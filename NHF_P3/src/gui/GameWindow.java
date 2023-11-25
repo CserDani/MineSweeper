@@ -520,6 +520,7 @@ public class GameWindow extends JFrame implements ActionListener, Serializable {
         } catch (Exception e) {
             Logger logger = Logger.getLogger(GameWindow.class.getName());
             logger.log(Level.WARNING, "EXCEPTION when tried to open SavedGame.txt", e);
+            new MainMenu();
         }
     }
 
