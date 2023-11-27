@@ -3,7 +3,9 @@ package gui;
 import entity.Cell;
 import mymouseadapt.MouseAdaptForGame;
 
+import javax.sound.sampled.Line;
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
@@ -262,7 +264,7 @@ public class GameWindow extends JFrame implements ActionListener, Serializable {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(600, 400);
         this.setLocationRelativeTo(null);
-        this.setResizable(true);
+        this.setResizable(false);
 
         diff = difficulty;
         // This switch determines the values of certain variables, according to the difficulty.
@@ -311,6 +313,7 @@ public class GameWindow extends JFrame implements ActionListener, Serializable {
         smileButton.setDisabledIcon(aliveIcon);
         smileButton.setPreferredSize(new Dimension(40, 40));
         smileButton.setBackground(Color.GRAY);
+        smileButton.setBorder(new LineBorder(Color.GRAY));
 
         northNestCenter.add(smileButton);
 

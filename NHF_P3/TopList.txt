@@ -1,2 +1,5 @@
+yay;21;Beginner
 hasgdsghad;25;Beginner
 yaaaaaaaaaaaay;31;Beginner
+hey;47;Beginner
+Normal;151;Normal
